@@ -1,0 +1,786 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
+    
+    
+      
+        <title>Python Virtual Environment - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3de6f41f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-virtual-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python Virtual Environment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python Virtual Environment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python Virtual Environment
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-version" class="md-nav__link">
+    Python version
+  </a>
+  
+    <nav class="md-nav" aria-label="Python version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyenv" class="md-nav__link">
+    pyenv
+  </a>
+  
+    <nav class="md-nav" aria-label="pyenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global" class="md-nav__link">
+    Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    Local
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-environment" class="md-nav__link">
+    Virtual Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#venv" class="md-nav__link">
+    venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyenv-virtualenv" class="md-nav__link">
+    Pyenv + Virtualenv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    Poetry
+  </a>
+  
+    <nav class="md-nav" aria-label="Poetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry-pyenv" class="md-nav__link">
+    Poetry + pyenv
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-management" class="md-nav__link">
+    Dependency Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    Pip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipenv" class="md-nav__link">
+    pipenv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry_1" class="md-nav__link">
+    Poetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipx" class="md-nav__link">
+    pipx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-version" class="md-nav__link">
+    Python version
+  </a>
+  
+    <nav class="md-nav" aria-label="Python version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyenv" class="md-nav__link">
+    pyenv
+  </a>
+  
+    <nav class="md-nav" aria-label="pyenv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global" class="md-nav__link">
+    Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    Local
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-environment" class="md-nav__link">
+    Virtual Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#venv" class="md-nav__link">
+    venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyenv-virtualenv" class="md-nav__link">
+    Pyenv + Virtualenv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    Poetry
+  </a>
+  
+    <nav class="md-nav" aria-label="Poetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry-pyenv" class="md-nav__link">
+    Poetry + pyenv
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-management" class="md-nav__link">
+    Dependency Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    Pip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipenv" class="md-nav__link">
+    pipenv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poetry_1" class="md-nav__link">
+    Poetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipx" class="md-nav__link">
+    pipx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="python-virtual-environment">Python Virtual Environment</h1>
+<p>The virtual environment ecosystem is composed by 3 different parts:</p>
+<ul>
+<li><strong>Python version</strong> Depending on the system you're using, a particular Python version can be installed via that system package manager or via <code>pyenv</code>.</li>
+<li><strong>Virtual Environment</strong> A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system. <a href="https://docs.python.org/3/library/venv.html#:~:text=A%20virtual%20environment%20is%20a,part%20of%20your%20operating%20system.">docs.python.org</a></li>
+<li><strong>Dependency management</strong> A list of all the Python dependencies for a given project.Typically called <code>requirements.txt</code>, but can also take a more complex form where there's a distinction between which dependencies belong to production and which belong to development/testing.</li>
+</ul>
+<hr />
+<h2 id="python-version">Python version</h2>
+<p>The most popular option is <code>pyenv</code>, even when a particular version is available in the OS package manager</p>
+<h3 id="pyenv">pyenv</h3>
+<p>Check the documentation at <a href="https://github.com/pyenv/pyenv">https://github.com/pyenv/pyenv</a> .</p>
+<p>Allows to specify a particular Python version to be used in a virtual environment.</p>
+<p>List all Python versions available to pyenv</p>
+<pre><code class="language-bash">pyenv install -l
+</code></pre>
+<p>Choose a version and install it</p>
+<pre><code class="language-bash">pyenv install 3.10.4
+</code></pre>
+<p>Versions are available under are available under <code>~/.pyenv/versions/</code></p>
+<h4 id="global">Global</h4>
+<p>The global command sets the global Python version, which is useful for
+ensuring a particular Python version by default. If you wanted to use 3.7.10 by default,
+then you could run this:</p>
+<pre><code class="language-bash">pyenv global 3.7.10
+</code></pre>
+<p>This command sets the ~/.pyenv/version to 3.7.10.</p>
+<h4 id="local">Local</h4>
+<p>The local command is used to set an application-specific Python version</p>
+<pre><code class="language-bash">pyenv local 3.10.4
+</code></pre>
+<p>This command creates a .python-version file in your current directory. If you have pyenv active in your environment,
+this file will automatically activate this version for you.</p>
+<hr />
+<h2 id="virtual-environment">Virtual Environment</h2>
+<h3 id="venv">venv</h3>
+<p>The most simple is <code>venv</code> using the Python system version</p>
+<pre><code class="language-bash">python -m venv simple-venv
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>activate</th>
+<th>deactivate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source simple-venv/bin/activate</code></td>
+<td><code>deactivate</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pyenv-virtualenv">Pyenv + Virtualenv</h3>
+<p>Pyenv supports the creation of a virtualenv tied to a particular Python version.</p>
+<pre><code class="language-bash">pyenv virtualenv 3.10.4 sample-virtual-env
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>activate</th>
+<th>deactivate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source ~/.pyenv/versions/sample-virtual-env/bin/activate</code></td>
+<td><code>deactivate</code></td>
+</tr>
+<tr>
+<td><code>pyenv local sample-virtual-env</code></td>
+<td><code>deactivate</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="poetry">Poetry</h3>
+<p>This is a packaging and dependency management all in one, which means:</p>
+<ul>
+<li>it supports builds</li>
+<li>you can publish your package to both public and private repositories</li>
+<li>includes a virtualenv <a href="https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment">https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment</a>.</li>
+</ul>
+<p>Check the documentation available at <a href="https://python-poetry.org/docs/">https://python-poetry.org/docs/</a>, the installation should be system-wide,
+even though it can be installed on a particular environment.</p>
+<pre><code class="language-bash">poetry new poetry-demo
+</code></pre>
+<p>This will create the <code>poetry-demo</code> directory with the following content.</p>
+<pre><code class="language-bash">poetry-demo
+├── pyproject.toml
+├── README.rst
+├── poetry_demo
+│   └── __init__.py
+└── tests
+    ├── __init__.py
+    └── test_poetry_demo.py
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>activate</th>
+<th>deactivate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>poetry shell</code></td>
+<td><code>deactivate</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="poetry-pyenv">Poetry + pyenv</h4>
+<p>To use poetry with a particular Python version, that version only needs to be available in the system. In this case,
+we're using a Python version provided by <code>pyenv</code>. For further documentation please
+check <a href="https://python-poetry.org/docs/managing-environments/#switching-between-environments">https://python-poetry.org/docs/managing-environments/#switching-between-environments</a></p>
+<pre><code class="language-bash">cd poetry-demo
+poetry env use ~/.pyenv/versions/3.10.4/bin/python
+</code></pre>
+<hr />
+<h2 id="dependency-management">Dependency Management</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>pip</th>
+<th>pipenv</th>
+<th>Poetry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>pip search <package_name></td>
+<td>pipenv search <package_name></td>
+<td>poetry search <package_name></td>
+</tr>
+<tr>
+<td>install</td>
+<td>pip install <package_name></td>
+<td>pipenv install <package_name></td>
+<td>poetry add <package_name></td>
+</tr>
+<tr>
+<td>install dev</td>
+<td></td>
+<td>pipenv install <package_name> --dev</td>
+<td>poetry add <package_name> --dev</td>
+</tr>
+<tr>
+<td>uninstall</td>
+<td>pip uninstall <package_name></td>
+<td>pipenv uninstall <package_name></td>
+<td>poetry remove <package_name></td>
+</tr>
+<tr>
+<td>uninstall dev</td>
+<td></td>
+<td>pipenv uninstall <package_name> --dev</td>
+<td>poetry remove <package_name> --dev</td>
+</tr>
+<tr>
+<td>list packages</td>
+<td>pip list</td>
+<td>pip list</td>
+<td>poetry show</td>
+</tr>
+<tr>
+<td>build</td>
+<td></td>
+<td></td>
+<td>poetry build</td>
+</tr>
+<tr>
+<td>publish</td>
+<td></td>
+<td></td>
+<td>poetry publish</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pip">Pip</h3>
+<p><a href="https://pip.pypa.io/en/stable/">https://pip.pypa.io/en/stable/</a></p>
+<p>Pip is the package installer for Python. You can use it to install packages from the Python Package Index
+and other indexes.</p>
+<h3 id="pipenv">pipenv</h3>
+<p><a href="https://pipenv.pypa.io/en/latest/">https://pipenv.pypa.io/en/latest/</a></p>
+<p>Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the
+Python world. Windows is a first-class citizen, in our world.
+It automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your Pipfile
+as you install/uninstall packages. It also generates the ever-important Pipfile.lock, which is used to produce
+deterministic builds.
+Pipenv uses Pipfile and Pipfile.lock to separate abstract dependency declarations from the last tested combination.</p>
+<h3 id="poetry_1">Poetry</h3>
+<p><a href="https://python-poetry.org/">https://python-poetry.org/</a></p>
+<p>Poetry also allows a version lock similarly to Pipenv, in this case it's called Poetry.lock</p>
+<h3 id="pipx">pipx</h3>
+<p>Pipx allows the installation and execution of Python applications in isolated environments.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c2e1ee47.min.js"></script>
+      
+    
+  </body>
+</html>
