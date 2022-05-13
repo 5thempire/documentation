@@ -67,9 +67,9 @@ The most simple is `venv` using the Python system version
 python -m venv simple-venv
 ```
 
-| activate                    | deactivate   |
-|-----------------------------|--------------|
-| `source venv/bin/activate`  | `deactivate` |
+| activate                           | deactivate   |
+|------------------------------------|--------------|
+| `source simple-venv/bin/activate`  | `deactivate` |
 
 ### Pyenv + Virtualenv
 
